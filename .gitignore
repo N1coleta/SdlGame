@@ -32,3 +32,5 @@
 *.app
 /.vs
 /SdlGame/SdlGame.vcxproj.user
+/SdlGame/x64
+/x64/
