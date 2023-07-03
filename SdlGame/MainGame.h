@@ -14,6 +14,7 @@ public:
 		void initSystem();
 		void processInput();
 		void gameloop();
+		void draw();
 		SDL_Window* wnd;
 		int screenWidth;
 		int screenHeight;
