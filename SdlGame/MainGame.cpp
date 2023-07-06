@@ -47,7 +47,7 @@ void MainGame::initSystem()
 			fatalError("cannot creat SDL window");
 		}
 		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-		glClearColor(0.1f, 0.57f, 0.6f, 1.0f);
+		glClearColor(0.1f, 0.61f, 0.65f, 1.0f);
 }
 
 void MainGame::processInput()
@@ -68,10 +68,13 @@ void MainGame::draw() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnableClientState(GL_COLOR_ARRAY);
 	glBegin(GL_TRIANGLES);
-	glColor3f(0.91f, 0.2f, 0.4f);
-	glVertex2f(0,0);
-	glVertex2f(0, 500);
-	glVertex2f(500, 500);
+	glColor3f(0.91f, 0.22f, 0.4f);
+	glVertex2f(-0.5,0.5);
+	glVertex2f(0.5, 0.5);
+	glVertex2f(0, 0);
+	glVertex2f(0.5, -0.5);
+	glVertex2f(-0.5, -0.5);
+	glVertex2f(0, 0);
 	glEnd();
 	SDL_GL_SwapWindow(wnd);
 }
