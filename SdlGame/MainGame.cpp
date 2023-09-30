@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include<SDL_opengl.h>
+
 using namespace std;
 void fatalError(const string& s) {
 	cerr << "FATAL ERROR" << s << endl;
@@ -21,6 +22,7 @@ MainGame::MainGame()
 void MainGame::run()
 {
 	initSystem();
+	sprite.init(-0.8f, -0.8f, 0.8f, 0.8f);
 	gameloop();
 }
 
@@ -66,15 +68,7 @@ void MainGame::processInput()
 void MainGame::draw() {
 	glClearDepth(1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glEnableClientState(GL_COLOR_ARRAY);
-	glBegin(GL_TRIANGLES);
-	glColor3f(0.91f, 0.22f, 0.4f);
-	glVertex2f(-0.5,0.5);
-	glVertex2f(0.5, 0.5);
-	glVertex2f(0, 0);
-	glVertex2f(0.5, -0.5);
-	glVertex2f(-0.5, -0.5);
-	glVertex2f(0, 0);
+	sprite.draw();
 	glEnd();
 	SDL_GL_SwapWindow(wnd);
 }
