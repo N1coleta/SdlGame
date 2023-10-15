@@ -27,8 +27,8 @@ void Sprite::init(float x, float y, float height, float width)
 	C════D
 	*/
 	float vertexData[2 * 3 * 2] = {
-		/*A*/x + width-0.1 ,y + height  /*B*/,x, y + height,/*C*/x ,y,//
-		/*C*/x ,y  /*A*/,x +width-0.3,y,/*D*/ x+ width ,y+height//
+		/*E*/x ,y+ width*0.5,/*I*/x+ width*0.4, y + height,/*H*/x+width ,y+height*0.8,//
+		/*C*/x ,y + width*0.5,/*f*/x + width,y+0.2*height,/*D*/ x + width*0.4 ,y
 	};
 	glBindBuffer(GL_ARRAY_BUFFER, vboId);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData),vertexData,GL_STATIC_DRAW);

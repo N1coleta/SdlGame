@@ -22,7 +22,13 @@ MainGame::MainGame()
 void MainGame::run()
 {
 	initSystem();
-	sprite.init(-0.8f, -0.8f, 0.8f, 0.8f);
+	for (int r = 0; r < 10; ++r) {
+		for (int c = 0; c < 10; c++) {
+			float dx = (r-5) * 0.2f;
+			float dy = (c-5)*0.2f;
+			sprites[r][c].init( dx,dy,0.19,0.19);
+		}
+	}
 	gameloop();
 }
 
@@ -68,7 +74,11 @@ void MainGame::processInput()
 void MainGame::draw() {
 	glClearDepth(1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	sprite.draw();
+	for (int c = 0; c < 10; ++c) {
+		for (int r = 0; r < 10; ++r) {
+			sprites[c][r].draw();
+		}
+	}
 	glEnd();
 	SDL_GL_SwapWindow(wnd);
 }

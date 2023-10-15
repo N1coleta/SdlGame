@@ -20,6 +20,6 @@ public:
 		int screenWidth;
 		int screenHeight;
 		GameState state;
-		Sprite sprite;
+		Sprite sprites[10][10];
 };
 
